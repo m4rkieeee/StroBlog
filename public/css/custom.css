@@ -1,0 +1,11 @@
+article {
+    background-color: gray;
+    color: white;
+    width: 50%;
+    margin: auto;
+    height: fit-content;
+}
+
+article h1 {
+    text-align: center;
+}
