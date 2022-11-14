@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+// Allows you to navigate to /home, uses PostController class home which tells it which view to return, which would also be the home.blade.php file.
 Route::get('/home', [PostController::class, 'home'])->name('home');
