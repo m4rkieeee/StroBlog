@@ -11,10 +11,10 @@
         {{--Show every instance of $post as $posts to use in the page, this will grab selected date from every row in the database like title and display it.--}}
     @foreach($post as $posts)
 <article>
-    <h1> {{ $posts->title }} </h1>
+    <h1><a href="{{ route('post.get', "$posts->id") }}" name="post_id" >{{ $posts->title }}</a></h1>
     <p>Posted by <b>{{ $posts->user->name }}</b> on <b>{{ $posts->created_at->format('d F Y, H:i') }}</b></p>
     <hr>
-    <p> {{ $posts->text }}</p>
+    <p> {{ Str::words($posts->text, 100) }}</p>
 </article>
 {{--Ofcourse, we have to end every statement we put above marked by the @ sign.--}}
 @endforeach
