@@ -2,7 +2,7 @@
 @extends('layouts.app')
 {{--Give the page a title--}}
 @section('title')
-    Post {{ $post->id }}
+    {{ Str::words($post->title, 5) }}
 @endsection
 {{--This is where the content goes, check layouts/app.blade.php folder and you'll understand.--}}
 @section('content')

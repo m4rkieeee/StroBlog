@@ -25,7 +25,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->text = $request->text;
         $post->save();
-        return redirect('/home')->with('status', 'data inserted');
+        return redirect('/')->with('status', 'data inserted');
     }
     public function getPost($id) {
         $post = Post::with('user')->find($id);
@@ -37,7 +37,7 @@ class PostController extends Controller
     }
     public function updatePost(Request $request, $id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
         $post->text = $request->input('editPost');
         $post->update();
         return redirect('/post/'.$post->id)->with('status', "Data updated!");
@@ -46,7 +46,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->delete();
-        return redirect('/home')->with('status', "Data deleted!");
+        return redirect('/')->with('status', "Data deleted!");
 
     }
 }
