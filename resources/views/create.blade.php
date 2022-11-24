@@ -14,7 +14,8 @@
         <label for="text">Text:</label>
         <textarea class="form-control" id="text" name="text" rows="20" cols="50"></textarea>
         <hr>
-        <input type="submit" class="btn btn-primary" value="Submit">
+            <input type="file" class="form-control" name="image" />
+            <input type="submit" class="btn btn-primary" value="Submit">
         <br>
         <br>
     </form>

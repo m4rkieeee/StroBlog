@@ -25,7 +25,26 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->text = $request->text;
         $post->save();
-        return redirect('/')->with('status', 'data inserted');
+        $request->validate([
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+
+        // Public Folder
+        $request->image->move(public_path('images'), $imageName);
+
+        // //Store in Storage Folder
+        // $request->image->storeAs('images', $imageName);
+
+        // // Store in S3
+        // $request->image->storeAs('images', $imageName, 's3');
+
+        //Store IMage in DB
+
+
+        return back()->with('success', 'Image uploaded Successfully!')
+            ->with('image', $imageName);
     }
     public function getPost($id) {
         $post = Post::with('user')->find($id);
