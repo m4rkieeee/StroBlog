@@ -16,7 +16,7 @@
         <hr>
         <input type="submit" class="btn btn-primary" value="Submit">
         <br>
-        <br></br>
+        <br>
     </form>
     </article>
         {{--Ofcourse, we have to end every statement we put above marked by the @ sign.--}}
