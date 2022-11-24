@@ -14,8 +14,9 @@
     <h1><a href="{{ route('post.get', "$posts->id") }}" name="post_id" >{{ $posts->title }}</a></h1>
     <p>Posted by <b>{{ $posts->user->name }}</b> on <b>{{ $posts->created_at->format('d F Y, H:i') }}</b></p>
     <hr>
-    <p> {{ Str::words($posts->text, 100) }}</p>
+    {!! nl2br(e(Str::words($posts->text, 100)))!!}
 </article>
+<br>
 {{--Ofcourse, we have to end every statement we put above marked by the @ sign.--}}
 @endforeach
     @endif

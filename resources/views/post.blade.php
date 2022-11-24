@@ -24,7 +24,7 @@
                     @endauth
                 </p>
                 <hr>
-                <p> {{ $post->text }}</p>
+                        {!! nl2br(e($post->text))!!}
             </article>
             {{--Ofcourse, we have to end every statement we put above marked by the @ sign.--}}
     @endif

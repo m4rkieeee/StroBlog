@@ -26,3 +26,4 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/post/store', [PostController::class, 'storePost']);
     Route::delete("/post/destroy/{id}", [PostController::class, 'destroy']);
 });
+
