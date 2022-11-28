@@ -10,6 +10,8 @@
     @if($post)
         {{--Show every instance of $post as $posts to use in the page, this will grab selected date from every row in the database like title and display it.--}}
             <article>
+                <img src=" https://via.placeholder.com/965x300">
+
                 <h1> {{ $post->title }} </h1>
                 <p>Posted by <b>{{ $post->user->name }}</b> on <b>{{ $post->created_at->format('d F Y, H:i') }}</b>
                     @auth
