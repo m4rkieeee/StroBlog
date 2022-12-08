@@ -38,6 +38,7 @@ class PostController extends Controller
     public function updatePost(Request $request, $id)
     {
         $post = Post::findOrFail($id);
+        $post->title = $request->input('editTitle');
         $post->text = $request->input('editPost');
         $post->update();
         return redirect('/post/'.$post->id)->with('status', "Data updated!");

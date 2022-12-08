@@ -11,7 +11,7 @@
         {{--Show every instance of $post as $posts to use in the page, this will grab selected date from every row in the database like title and display it.--}}
         <form class="form-group" method="post" action="{{url('update-data/'.$post->id)}}">
         <article>
-            <h1> {{ $post->title }} </h1>
+            <h1><textarea class="form-group" name="editTitle" id="editTitle" rows="1" style="text-align: center">{{ $post->title }}</textarea></h1>
             <p>Posted by <b>{{ $post->user->name }}</b> on <b>{{ $post->created_at->format('d F Y, H:i') }}
                 </b>
             </p>
